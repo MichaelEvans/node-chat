@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+	<head>
+		<title>Chat</title>
+		<meta charset="utf-8">
+		
+<!--		<link rel="stylesheet" href="style/reset.css">
+		<link rel="stylesheet" href="style/game.css">-->
+  		<link rel="stylesheet" href="css/chat.css">
+  		<link rel="stylesheet" href="css/bootstrap.css">
+  		<script src="js/jquery-1.7.min.js"></script>
+  		<script src="http://localhost:8080/socket.io/socket.io.js"></script>
+		<script src="js/chat.js"></script>
+  		<script>
+      		
+  		</script>
+	</head>
+	
+	<body>
+	<div id="connect">
+        <h1>Sign in</h1>
+        <p>Uh…sign in here.</p>
+        <form id="connectForm" action="#">
+          <fieldset>
+            <label for="nickInput">Name </label>
+            <br>
+            <input id="nickInput" class="text" maxlength="20" type="text" name="nick" value="nickname">
+            <input id="connectButton" class="button" type="submit" name value="Enter">
+          </fieldset>
+        </form>
+	
+	</div>
+	
+	<div id="loading"><p>loading</p></div>
+
+
+ 	<div id="logwrap">
+             	<div id="log">
+                  <table class="message join">
+                    <tbody>
+                      <tr>
+                        <td class="date">11:12</td>
+                        <td class="nick">Mike</td>
+                        <td class="message">joined</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <table class="message personal">
+                    <tbody>
+                      <tr>
+                        <td class="date">11:12</td>
+                        <td class="nick">Mike</td>
+                        <td class="message">What's up? <span class="label important">Urgent!</span> </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <table class="message notice">
+                    <tbody>
+                      <tr>
+                        <td class="date hide">11:13</td>
+                        <td class="nick">Server</td>
+                        <td class="message">Shut up.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+      </div>
+  		<div id="toolbar">
+                <ul id="status">
+                    <li class="date" id="currentTime">12:59</li>
+                    <li id='currentUsers'><a id="usersLink" href="#">5 users</a></li>
+                </ul>
+                <input tabindex="1" maxlength='2000' type="text" id="entry" />
+                <input id='entry-btn' type='button' value='Send' />
+            </div> 
+            
+
+		<script>
+			// Initialise the game
+			//init();
+			//animate();
+			$(document).ready(function() {
+                resizeLog();
+                /*if (CONFIG.debug) {
+                    scrollDown();
+                }*/
+            });
+            $(window).bind('resize',function() {
+                resizeLog();
+            });
+            
+			$('#logwrap').hide();
+			$('#toolbar').hide();
+		</script>
+	</body>
+</html>
