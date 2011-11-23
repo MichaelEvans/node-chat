@@ -1,0 +1,3 @@
+Requirements node, and redis.
+
+Run with 'node server.js'
